@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="about-section">
+    <div class="container">
+
+    <h2>About JTAC Book Library</h2>
+    <p>Please login to place a request for lending a book , The reqeust will go to admin and he will issue the books to you .</p>
+  <a href="{{ url_for('login') }}" class="btn-primary">Login </a>
+
+
+    </div>
+    <div class="container">
+
+    <h2>Admin</h2>
+    <p>If you are the admin ,you can add books, issue books and collect them . Also, view reports etc </p>
+    <a href="{{ url_for('Adminlogin') }}" class="btn-primary">Admin </a>
+
+
+    </div>
+
+      <div class="container">
+
+
+        <div class="section-device">
+          <img src="static/img/device.png">
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+
+
+
+  </main>
+{% endblock %}

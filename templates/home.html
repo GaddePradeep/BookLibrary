@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="hero-section">
+  <div class="container">
+
+    <div class="section-content">
+      <h2>Hello , {{ session['email'] }}  Explore the Books </h2>
+      <a href="{{ url_for('login') }}" class="btn-primary">Lend a Book</a>
+      <a href="{{ url_for('logout') }}" class="btn-secondary">Log Out</a>
+
+    </div>
+
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+
+
+    <div style="overflow-x:auto" class="section-device">
+          <table class="table">
+             <thead>
+                <tr>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email</th>
+
+                </tr>
+             </thead>
+
+             <tbody>
+                {% for newuser in User %}
+                   <tr>
+                      <td>{{ newuser.firstname }}</td>
+                      <td>{{ newuser.lastname }}</td>
+                      <td>{{ newuser.email }}</td>
+
+                   </tr>
+                {% endfor %}
+             </tbody>
+          </table>
+    </div>
+<div class="clearfix"></div>
+  </div>
+</main>
+{% endblock %}

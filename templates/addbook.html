@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="container signup-section">
+    <div class="section-content">
+      <h2>Create a Book Entry</h2>
+
+      <form method="POST" action="/AddBook">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+          {{ form.book_name.label }}
+
+          {% if form.book_name.errors %}
+            {% for error in form.book_name.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.book_name }}
+        </div>
+
+        <div class="form-group">
+          {{ form.contributor_name.label }}
+
+          {% if form.contributor_name.errors %}
+            {% for error in form.contributor_name.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.contributor_name }}
+        </div>
+
+        <div class="form-group">
+          {{ form.description.label }}
+
+          {% if form.description.errors %}
+            {% for error in form.description.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.description }}
+        </div>
+
+        <div class="form-group">
+          {{ form.setcount.label }}
+
+          {% if form.setcount.errors %}
+            {% for error in form.setcount.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.setcount }}
+        </div>
+
+        <div class="form-group">
+          {{ form.email.label }}
+
+          {% if form.email.errors %}
+            {% for error in form.email.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.email }}
+        </div>
+
+
+
+        {{ form.submit(class="btn-primary") }}
+      </form>
+    </div>
+  </main>
+{% endblock %}

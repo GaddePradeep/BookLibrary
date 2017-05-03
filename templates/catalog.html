@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+
+
+
+
+
+<div class="section-content">
+      <table class="table">
+         <thead>
+            <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for newuser in User %}
+               <tr>
+                  <td>{{ newuser.firstname }}</td>
+                  <td>{{ newuser.lastname }}</td>
+                  <td>{{ newuser.email }}</td>
+
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+</div>
+
+  {% endblock %}
